@@ -53,7 +53,7 @@ class BadIPA_cleaner(object):
     def helper(self, ipa_object_type, field_name):
         ipa_find = getattr(self.client, f'{ipa_object_type}_find')
         names = []
-        for finded in ipa_find()['result']:
+        for finded in ipa_find(o_sizelimit=0)['result']:
             names.append(finded[field_name][0])
         print(names)
 
